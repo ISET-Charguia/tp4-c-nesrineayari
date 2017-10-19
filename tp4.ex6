@@ -1,0 +1,46 @@
+#include <stdio.h>
+int main()
+{
+ int a[50], b[50], fus[100];
+ int n, m;
+ int IA, IB, IFUS; 
+
+ /* Saisie des données */
+ printf("Dimension du tableau a : ");
+ scanf("%d", &n );
+ printf("Entrer les éléments de a dans l'ordre croissant :\n");
+ for (IA=0; IA<n; IA++)
+    {
+     printf("Elément [i] :%d ", IA);
+     scanf("%d", &a[IA]);
+    }
+ printf("Dimension du tableau b : ");
+ scanf("%d", &m );
+ printf("Entrer les éléments de b dans l'ordre croissant :\n");
+ for (IB=0; IB<m; IB++)
+    {
+     printf("Elément b[i]:%d ", IB);
+     scanf("%d", &b[IB]);
+    }
+ printf("Tableau a :\n");
+ for (IA=0; IA<n; IA++)
+     printf("%d ", a[IA]);
+ printf("\n");
+ printf("Tableau b :\n");
+ for (IB=0; IB<m; IB++)
+     printf("%d ", b[IB]);
+ printf("\n");
+ IA=0; IB=0; IFUS=0;
+ while ((IA<n) && (IB<m))
+        if(a[IA]<b[IB])
+            {
+             fus[IFUS]=a[IA];
+             IFUS++;
+             IA++;
+            }
+        else
+            {
+             fus[IFUS]=b[IB];
+             IFUS++;
+             IB++;
+            }
