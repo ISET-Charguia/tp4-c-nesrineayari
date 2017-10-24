@@ -1,0 +1,68 @@
+#include <stdio.h>
+main()
+{
+
+
+ int A[50], B[50], FUS[100];
+ int N, M;
+ int i, j, k;
+ printf("Dimension du tableau A : ");
+ scanf("%d", &N );
+ printf("Entrer les éléments de A dans l'ordre croissant :\n");
+ for (i=0; i<N; i++)
+    {
+     printf("Elément A[%d] : ", i);
+     scanf("%d", &A[i]);
+    }
+ printf("Dimension du tableau B : ");
+ scanf("%d", &M );
+ printf("Entrer les éléments de B dans l'ordre croissant :\n");
+ for (j=0; j<M; j++)
+    {
+     printf("Elément B[%d] : ", j);
+     scanf("%d", &B[j]);
+    }
+
+ printf("Tableau A :\n");
+ for (i=0; i<N; i++)
+     printf("%d ", A[i]);
+ printf("\n");
+ printf("Tableau B :\n");
+ for (j=0; j<M; j++)
+     printf("%d ", B[j]);
+ printf("\n");
+
+ i=0; j=0; k=0;
+ while ((i<N) && (j<M))
+ if(A[i]<B[j])
+ {
+ FUS[k]=A[i];
+ k++;
+ i++;
+ }
+ else
+ {
+ FUS[k]=B[j];
+ k++;
+ j++;
+ }
+
+
+ while (i<N)
+ {
+ FUS[k]=A[i];
+ k++;
+ i++;
+ }
+ while (j<M)
+ {
+ FUS[k]=B[j];
+ k++;
+ j++;
+ }
+
+ printf("Tableau FUS :\n");
+ for (k=0; k<N+M; k++)
+     printf("%d ", FUS[k]);
+ printf("\n");
+ return 0;}
